@@ -1,0 +1,393 @@
+/* html root colors */
+:root {
+    --color-about-top-right-background: #0f0e10;
+    --color-about-bottom-left-background: #3a3d40;
+    --color-header: #be3144;
+    --color-work-section: #45567d;
+    --color-projects-bottom--work: #303841;
+    --color-about-h1: #f0f0f0;
+}
+
+/* set the margins and paddings to zero */
+* {
+    box-sizing: border-box;
+}
+
+/* page scrolling to be smooth and a little beautiful */
+html {
+    scroll-behavior: smooth;
+}
+
+/* color
+   font */
+body {
+    background: var(--color-main-background);
+    font-family: Poppins, sans-serif;
+    margin: 0;
+}
+
+/* navbar of position fixed to top
+    with display of flex */
+#navbar {
+    background-color: var(--color-header);
+    position: fixed;
+    width: 100%;
+    height: 66px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+    overflow: hidden;
+}
+
+/* nav links */
+#navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+    padding: 25px 20px;
+}
+
+/* nav liks hover would be 
+a different background color */
+#navbar a:hover {
+    background-color: #45567d;
+}
+
+/* first section of page
+introduction of me */
+.about-section {
+    /* change the color of page from
+    top right to bottom left */
+    background: linear-gradient(45deg,
+            var(--color-about-bottom-left-background),
+            var(--color-about-top-right-background));
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 40vh 0;
+}
+
+/* a big centered text */
+.about-section h1 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    color: var(--color-about-h1);
+    /* margin: auto 0; */
+}
+
+/* media for screens biger than 700px
+changes the size of h1 */
+@media(min-width: 700px) {
+    .about-section h1 {
+        font-size: 60px;
+    }
+}
+
+/* description at the bottom of h1 */
+.about-text p {
+    color: var(--color-header);
+    text-align: center;
+    font-style: italic;
+    font-size: xx-large;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* projects links section */
+.projects {
+    background-color: var(--color-work-section);
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/* title of projects links */
+.project-tile {
+    color: var(--color-about-h1);
+    font-size: 40px;
+    margin: 90px 20px 0px 20px;
+    text-align: center;
+}
+
+/* a white line under projects title */
+.row-line {
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+    height: 1px;
+    background-color: var(--color-about-h1);
+    max-width: 650px;
+}
+
+/* media to change text size */
+@media (min-width: 1200px) {
+    .row-line {
+        height: 2px;
+    }
+
+    .project-tile {
+        font-size: 43px;
+    }
+}
+
+/* links div
+with flex display in center */
+.projects-links {
+    width: 100%;
+    height: auto;
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* links image */
+.projects-links img {
+    object-fit: contain;
+    width: 100%;
+    display: block;
+}
+
+/* projects links */
+.projects-links a {
+    text-decoration: none;
+    background-color: var(--color-projects-bottom--work);
+    width: 92%;
+    display: block;
+    margin-bottom: 40px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* projects names text */
+.projects-links p {
+    text-align: center;
+    color: var(--color-about-h1);
+    font-size: large;
+}
+
+/*              </> 
+above thing (span) befor and after projects name */
+.code {
+    color: var(--color-projects-bottom--work);
+    transition: color 0.3s ease-out;
+}
+
+/* show span when link is hovered  */
+a:hover>p>.code {
+    color: #ff7f50;
+    transition: 500ms;
+}
+
+/* change the display from flex to grid */
+@media(min-width: 740px) {
+    .projects-links {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        gap: 5%;
+        height: auto;
+        justify-content: center;
+        margin-bottom: 150px;
+    }
+
+    .projects-links a {
+        width: 100%;
+        height: 90%;
+    }
+
+    .projects-links img {
+        height: 85%;
+        object-fit: cover;
+    }
+}
+
+/* show all projects button  */
+.btn-show-all {
+    margin: 0 auto 100px auto;
+    display: block;
+    width: 150px;
+    background-color: var(--color-projects-bottom--work);
+    border: none;
+    font-size: 20px;
+    color: var(--color-about-h1);
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+/* show all btn hover */
+.btn-show-all:hover {
+    transition: 500ms;
+    background-color: var(--color-header);
+}
+
+.btn-show-all>i {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+
+/* show all btn hover and transform i to 2px right */
+.btn-show-all:hover>i {
+    transform: translateX(2px);
+}
+
+/* chevran right simbol */
+.fa-chevron-right {
+    padding-left: 10px;
+}
+
+/* setup links grid when width is more than 1100px */
+@media(min-width: 1100px) {
+    .projects-links {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        gap: 3%;
+        height: auto;
+        justify-content: center;
+        margin-bottom: 100px;
+        /* padding-bottom: 100px; */
+        /* flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; */
+    }
+
+    .projects-links a {
+        width: 100%;
+        height: 100%;
+        margin-bottom: -20px;
+    }
+
+    .projects-links img {
+        height: 85%;
+        object-fit: cover;
+    }
+}
+
+/* thirs section 
+contact links, email and number */
+.contact {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-projects-bottom--work);
+    overflow: hidden;
+    color: var(--color-about-h1);
+}
+
+/* contact text in center */
+.contact h1,
+.contact p {
+    text-align: center;
+}
+
+/* contact section title */
+.contact h1 {
+    font-size: 55px;
+    line-height: 1.5;
+    margin: 80px 15px 0 15px;
+}
+
+/* an italic question */
+.contact .italic {
+    font-style: italic;
+    margin-top: 0;
+    font-size: large;
+    font-weight: 200;
+}
+
+/* contackt links div */
+.contact-links {
+    height: 150px;
+    margin: 0px 25px 50px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@media (max-width: 500px) {
+    .contact {
+        padding-bottom: 150px;
+        overflow: hidden;
+    }
+}
+
+/* contact links */
+.contact-links a {
+    text-decoration: none;
+    color: var(--color-about-h1);
+    font-size: 23px;
+    padding: 10px 20px;
+    transition: transform 0.3s ease-out;
+}
+
+/* a red line after contact */
+.red-line {
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-header);
+    margin-bottom: 20px;
+}
+
+/* pages footer div */
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* a link of FCC in footer */
+.footer a {
+    text-decoration: none;
+    color: var(--color-about-h1);
+    margin-bottom: 30px;
+}
+
+/* footer description */
+.description {
+    text-align: left;
+}
+
+/* media to set up contact section in 600px and more */
+@media (min-width: 600px) {
+    .contact h1 {
+        margin-top: 130px;
+    }
+
+    .contact-links {
+        margin-bottom: 100px;
+    }
+
+    .contact-links a {
+        height: 50px;
+    }
+}
+
+/* media to set up contact section in 1100px and more */
+@media (min-width: 1100px) {
+    .contact h1 {
+        font-size: 60px;
+        margin-top: 180px;
+    }
+
+    .contact-links a {
+        font-size: 25px;
+    }
+
+    .contact-links {
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+}
+
+/* contact links transfer 10px down when hover the mouse */
+.contact-links a:hover {
+    transform: translate(0px, 10px);
+}
